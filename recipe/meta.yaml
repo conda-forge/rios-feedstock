@@ -10,18 +10,18 @@ source:
     md5: 6fa3db26d5c9e6c504ff46f66267e39c
 
 build:
-    number: 0
+    number: 1
     script: python setup.py install
 
 requirements:
   build:
     - python
     - numpy
-    - gdal 2.0.2
+    - gdal
   run:
     - python
     - numpy
-    - gdal 2.0.2
+    - gdal
 
 test:
     imports:
