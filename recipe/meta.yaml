@@ -17,11 +17,13 @@ requirements:
   build:
     - python
     - numpy
-    - gdal
+    - gdal 2.0.2  # [osx]
+    - gdal  # [not osx]
   run:
     - python
     - numpy
-    - gdal
+    - gdal 2.0.2  # [osx]
+    - gdal  # [not osx]
 
 test:
     imports:
