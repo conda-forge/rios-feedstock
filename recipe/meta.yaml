@@ -18,12 +18,12 @@ requirements:
     - python
     - numpy
     - gdal 2.0.2  # [osx]
-    - gdal  # [not osx]
+    - gdal 2.1.*  # [not osx]
   run:
     - python
     - numpy
     - gdal 2.0.2  # [osx]
-    - gdal  # [not osx]
+    - gdal 2.1.*  # [not osx]
 
 test:
     imports:
