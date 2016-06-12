@@ -25,6 +25,10 @@ requirements:
     - gdal 2.0.2  # [osx]
     - gdal 2.1.*  # [not osx]
 
+test:
+    imports:
+        - rios
+
 about:
     home: http://rioshome.org/
     license: GPLv3
