@@ -1,37 +1,35 @@
 {% set version = "1.4.3" %}
 
 package:
-    name: rios
-    version: {{ version }}
+  name: rios
+  version: {{ version }}
 
 source:
-    fn: rios-{{ version }}.tar.gz
-    url: https://bitbucket.org/chchrsc/rios/downloads/rios-{{ version }}.tar.gz
-    md5: c6d370262a2630ef81deb53b88e5d184
+  fn: rios-{{ version }}.tar.gz
+  url: https://bitbucket.org/chchrsc/rios/downloads/rios-{{ version }}.tar.gz
+  md5: c6d370262a2630ef81deb53b88e5d184
 
 build:
-    number: 1
-    script: python setup.py install
+  number: 1
+  script: python setup.py install
 
 requirements:
   build:
     - python
-    - numpy
-    - gdal 2.1.*
   run:
     - python
     - numpy
     - gdal 2.1.*
 
 test:
-    imports:
-        - rios
+  imports:
+    - rios
 
 about:
-    home: http://rioshome.org/
-    license: GPLv3
-    summary: Raster I/O simplification, a set of Python modules built on top of GDAL to simplify processing raster data, including data with Raster Attribute Tables.
+  home: http://rioshome.org/
+  license: GPL-3.0
+  summary: 'Raster I/O simplification, a set of Python modules built on top of GDAL to simplify processing raster data, including data with Raster Attribute Tables.'
 
 extra:
-    recipe-maintainers:
-        - gillins
+  recipe-maintainers:
+    - gillins
