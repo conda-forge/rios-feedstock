@@ -3,13 +3,25 @@ About rios
 
 Home: http://rioshome.org/
 
-Package license: GPLv3
+Package license: GPL-3.0
 
 Feedstock license: BSD 3-Clause
 
 Summary: Raster I/O simplification, a set of Python modules built on top of GDAL to simplify processing raster data, including data with Raster Attribute Tables.
 
 
+
+Current build status
+====================
+
+Linux: [![Circle CI](https://circleci.com/gh/conda-forge/rios-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/rios-feedstock)
+OSX: [![TravisCI](https://travis-ci.org/conda-forge/rios-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/rios-feedstock)
+Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/rios-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/rios-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/rios/badges/version.svg)](https://anaconda.org/conda-forge/rios)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/rios/badges/downloads.svg)](https://anaconda.org/conda-forge/rios)
 
 Installing rios
 ===============
@@ -66,18 +78,6 @@ Terminology
 
 **conda-forge** - the place where the feedstock and smithy live and work to
                   produce the finished article (built conda distributions)
-
-Current build status
-====================
-
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/rios-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/rios-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/rios-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/rios-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/rios-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/rios-feedstock/branch/master)
-
-Current release info
-====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/rios/badges/version.svg)](https://anaconda.org/conda-forge/rios)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/rios/badges/downloads.svg)](https://anaconda.org/conda-forge/rios)
 
 
 Updating rios-feedstock
