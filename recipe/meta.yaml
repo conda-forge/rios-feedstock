@@ -5,13 +5,14 @@ package:
   version: {{ version }}
 
 source:
-  fn: rios-{{ version }}.tar.gz
-  url: https://bitbucket.org/chchrsc/rios/downloads/rios-{{ version }}.tar.gz
-  md5: c6d370262a2630ef81deb53b88e5d184
+  hg_url: https://bitbucket.org/chchrsc/rios
 
 build:
-  number: 2
-  script: python setup.py install
+  number: 3
+  entry_points:
+    - testrios.py = rios.riostests.riostestutils:testAll
+    - riosprintstats.py = rios.fileinfo:main
+    - rioscalcstats.py = rios.calcstats:main
 
 requirements:
   build:
