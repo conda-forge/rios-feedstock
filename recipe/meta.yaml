@@ -19,7 +19,7 @@ requirements:
   run:
     - python
     - numpy
-    - gdal 2.1.*
+    - gdal
 
 test:
   imports:
