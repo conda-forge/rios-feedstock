@@ -10,7 +10,7 @@ source:
   md5: c6d370262a2630ef81deb53b88e5d184
 
 build:
-  number: 3
+  number: 4
   script: python setup.py install
 
 requirements:
@@ -24,10 +24,14 @@ requirements:
 test:
   imports:
     - rios
+  commands:
+    - conda inspect linkages -p $PREFIX rios  # [not win]
+    - conda inspect objects -p $PREFIX rios  # [osx]
 
 about:
   home: http://rioshome.org/
   license: GPL-3.0
+  license_file: LICENSE.txt
   summary: 'Raster I/O simplification, a set of Python modules built on top of GDAL to simplify processing raster data, including data with Raster Attribute Tables.'
 
 extra:
