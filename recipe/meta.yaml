@@ -12,8 +12,8 @@ build:
   script: python setup.py install
   entry_points:
     - testrios.py = rios.riostests.riostestutils:testAll
-    - riosprintstats.py = rios.fileinfo:main
-    - rioscalcstats.py = rios.calcstats:main
+    - riosprintstats.py = rios.cmdline.riosprintstats:main
+    - rioscalcstats.py = rios.cmdline.rioscalcstats:main
 
 requirements:
   build:
@@ -35,7 +35,7 @@ test:
 about:
   home: http://rioshome.org/
   license: GPL-3.0
-  license_file: LICENSE.txt
+  license_file: rios/LICENSE.txt
   summary: 'Raster I/O simplification, a set of Python modules built on top of GDAL to simplify processing raster data, including data with Raster Attribute Tables.'
 
 extra:
