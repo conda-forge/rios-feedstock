@@ -11,7 +11,6 @@ source:
 
 build:
   number: 0
-  noarch: python
   entry_points:
     - testrios.py = rios.riostests.riostestutils:testAll
     - riosprintstats.py = rios.cmdline.riosprintstats:main
