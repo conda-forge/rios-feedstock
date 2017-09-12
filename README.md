@@ -14,9 +14,7 @@ Summary: Raster I/O simplification, a set of Python modules built on top of GDAL
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/rios-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/rios-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/rios-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/rios-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/rios-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/rios-feedstock/branch/master)
+All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/rios-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/rios-feedstock)
 
 Current release info
 ====================
