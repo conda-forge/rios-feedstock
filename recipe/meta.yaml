@@ -10,7 +10,8 @@ source:
   sha256: 59fc71a3cfdc2c6de47fd38bc999bdb6de48ce882c5a680dac97118bf86b486f
 
 build:
-  number: 0
+  number: 1
+  noarch: python
   entry_points:
     - testrios.py = rios.riostests.riostestutils:testAll
     - riosprintstats.py = rios.cmdline.riosprintstats:main
