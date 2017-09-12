@@ -1,4 +1,4 @@
-{% set version = "1.4.3" %}
+{% set version = "1.4.4" %}
 
 package:
   name: rios
@@ -7,11 +7,14 @@ package:
 source:
   fn: rios-{{ version }}.tar.gz
   url: https://bitbucket.org/chchrsc/rios/downloads/rios-{{ version }}.tar.gz
-  md5: c6d370262a2630ef81deb53b88e5d184
+  sha256: 59fc71a3cfdc2c6de47fd38bc999bdb6de48ce882c5a680dac97118bf86b486f
 
 build:
-  number: 4
-  script: python setup.py install
+  number: 0
+  entry_points:
+    - testrios.py = rios.riostests.riostestutils:testAll
+    - riosprintstats.py = rios.cmdline.riosprintstats:main
+    - rioscalcstats.py = rios.cmdline.rioscalcstats:main
 
 requirements:
   build:
@@ -25,6 +28,8 @@ test:
   imports:
     - rios
   commands:
+    - rioscalcstats.py -h
+    - riosprintstats.py -h
     - conda inspect linkages -p $PREFIX rios  # [not win]
     - conda inspect objects -p $PREFIX rios  # [osx]
 
