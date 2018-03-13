@@ -1,4 +1,4 @@
-{% set version = "1.4.4" %}
+{% set version = "1.4.5" %}
 
 package:
   name: rios
@@ -7,7 +7,7 @@ package:
 source:
   fn: rios-{{ version }}.tar.gz
   url: https://bitbucket.org/chchrsc/rios/downloads/rios-{{ version }}.tar.gz
-  sha256: 59fc71a3cfdc2c6de47fd38bc999bdb6de48ce882c5a680dac97118bf86b486f
+  sha256: dd98882867ce10190db59b7d0caa36730b0380ef140dd59aaec64fda953363b8
 
 build:
   number: 0
@@ -28,6 +28,7 @@ test:
   imports:
     - rios
   commands:
+    - testrios.py
     - rioscalcstats.py -h
     - riosprintstats.py -h
     - conda inspect linkages -p $PREFIX rios  # [not win]
