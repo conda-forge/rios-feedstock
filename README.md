@@ -14,14 +14,16 @@ Summary: Raster I/O simplification, a set of Python modules built on top of GDAL
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/rios-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/rios-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/rios-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/rios-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/rios-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/rios-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/rios-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/rios-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/rios-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/rios-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/rios-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/rios-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/rios/badges/version.svg)](https://anaconda.org/conda-forge/rios)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/rios/badges/downloads.svg)](https://anaconda.org/conda-forge/rios)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-rios-green.svg)](https://anaconda.org/conda-forge/rios) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rios.svg)](https://anaconda.org/conda-forge/rios) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rios.svg)](https://anaconda.org/conda-forge/rios) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rios.svg)](https://anaconda.org/conda-forge/rios) |
 
 Installing rios
 ===============
