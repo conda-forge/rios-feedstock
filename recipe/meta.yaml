@@ -41,4 +41,7 @@ about:
   summary: 'Raster I/O simplification, a set of Python modules built on top of GDAL to simplify processing raster data, including data with Raster Attribute Tables.'
 
 extra:
-  recipe-maintainers: [gillins, danclewley, neilflood]
+  recipe-maintainers: 
+    - gillins
+    - danclewley
+    - neilflood
