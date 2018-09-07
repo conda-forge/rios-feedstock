@@ -1,24 +1,28 @@
-{% set version = "1.4.5" %}
+{% set version = "1.4.6" %}
 
 package:
   name: rios
   version: {{ version }}
 
 source:
-  fn: rios-{{ version }}.tar.gz
   url: https://bitbucket.org/chchrsc/rios/downloads/rios-{{ version }}.tar.gz
-  sha256: dd98882867ce10190db59b7d0caa36730b0380ef140dd59aaec64fda953363b8
+  sha256: 6fe5ceecb1cefbcef6c67e5c015261a7db4494cb5c7239b1dc8fd6db26a5419e
 
 build:
   number: 0
+  script:
+    - set RIOS_NOCMDLINE=1  # [win]
+    - export RIOS_NOCMDLINE=1  # [not win]
+    - "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
   entry_points:
     - testrios.py = rios.riostests.riostestutils:testAll
     - riosprintstats.py = rios.cmdline.riosprintstats:main
     - rioscalcstats.py = rios.cmdline.rioscalcstats:main
 
 requirements:
-  build:
+  host:
     - python
+    - pip
   run:
     - python
     - numpy
