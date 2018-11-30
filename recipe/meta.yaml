@@ -10,7 +10,7 @@ source:
   sha256: 6fe5ceecb1cefbcef6c67e5c015261a7db4494cb5c7239b1dc8fd6db26a5419e
 
 build:
-  number: 0
+  number: 1000
   script:
     - set RIOS_NOCMDLINE=1  # [win]
     - export RIOS_NOCMDLINE=1  # [not win]
