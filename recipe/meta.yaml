@@ -12,10 +12,12 @@ source:
     # Don't install the command line progs, use entry point instead
     # Setting the env vars doesn't work for noarch packages.
     - nocmdline.patch
+    # backport of https://bitbucket.org/chchrsc/rios/commits/9762e1bfe7731adde47fe5fb4a8753798aaef2eb
+    - fixkeatest.patch
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script:
     - "{{ PYTHON }} setup.py install"
   entry_points:
