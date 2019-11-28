@@ -1,4 +1,4 @@
-{% set version = "1.4.8" %}
+{% set version = "1.4.9" %}
 
 package:
   name: rios
@@ -6,18 +6,16 @@ package:
 
 source:
   fn: rios-{{ version }}.tar.gz
-  url: https://bitbucket.org/chchrsc/rios/downloads/rios-{{ version }}.tar.gz
-  sha256: d5de71b6b41aba81a9e1caf5fcffe3b08ea24e5f7181a8509aa9f75437f71972
+  url: https://github.com/ubarsc/rios/releases/download/rios-{{ version }}/rios-{{ version }}.tar.gz
+  sha256: 74bcdb6a80cbf59f9e262694cf5afbc22e98424e0c92c7ed6d8291ca8a47eb8b
   patches:
     # Don't install the command line progs, use entry point instead
     # Setting the env vars doesn't work for noarch packages.
     - nocmdline.patch
-    # backport of https://bitbucket.org/chchrsc/rios/commits/9762e1bfe7731adde47fe5fb4a8753798aaef2eb
-    - fixkeatest.patch
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script:
     - "{{ PYTHON }} setup.py install"
   entry_points:
