@@ -5,11 +5,9 @@ Home: http://rioshome.org/
 
 Package license: GPL-3.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/rios-feedstock/blob/master/LICENSE.txt)
 
 Summary: Raster I/O simplification, a set of Python modules built on top of GDAL to simplify processing raster data, including data with Raster Attribute Tables.
-
-
 
 Current build status
 ====================
