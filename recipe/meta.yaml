@@ -41,7 +41,7 @@ test:
 
 about:
   home: http://rioshome.org/
-  license: GPL-3.0
+  license: GPL-3.0-or-later
   license_file: LICENSE.txt
   summary: Raster I/O simplification, a set of Python modules built on top of GDAL to simplify processing raster data, including data with Raster Attribute Tables.
 
