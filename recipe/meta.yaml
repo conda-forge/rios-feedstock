@@ -1,4 +1,4 @@
-{% set version = "1.4.10" %}
+{% set version = "1.4.11" %}
 
 package:
   name: rios
@@ -7,7 +7,7 @@ package:
 source:
   fn: rios-{{ version }}.tar.gz
   url: https://github.com/ubarsc/rios/releases/download/rios-{{ version }}/rios-{{ version }}.tar.gz
-  sha256: 6324acccc6018f9e06c40370bc366dc459890e8c09d26e0ebd245f6fd46dad71
+  sha256: b7ae5311f987b32f1afe1fabc16f25586de8d15c17a69405d1950aeada7b748e
   patches:
     # Don't install the command line progs, use entry point instead
     # Setting the env vars doesn't work for noarch packages.
@@ -17,7 +17,7 @@ build:
   noarch: python
   number: 0
   script:
-    - "{{ PYTHON }} setup.py install"
+    - {{ PYTHON }} setup.py install
   entry_points:
     - testrios.py = rios.riostests.riostestutils:testAll
     - riosprintstats.py = rios.cmdline.riosprintstats:main
@@ -38,17 +38,15 @@ test:
     - testrios.py
     - rioscalcstats.py -h
     - riosprintstats.py -h
-    - conda inspect linkages -p $PREFIX rios  # [not win]
-    - conda inspect objects -p $PREFIX rios  # [osx]
 
 about:
   home: http://rioshome.org/
-  license: GPL-3.0
+  license: GPL-3.0-or-later
   license_file: LICENSE.txt
-  summary: 'Raster I/O simplification, a set of Python modules built on top of GDAL to simplify processing raster data, including data with Raster Attribute Tables.'
+  summary: Raster I/O simplification, a set of Python modules built on top of GDAL to simplify processing raster data, including data with Raster Attribute Tables.
 
 extra:
-  recipe-maintainers: 
+  recipe-maintainers:
     - gillins
     - danclewley
     - neilflood
