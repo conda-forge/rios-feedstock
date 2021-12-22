@@ -25,9 +25,10 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
+    - numpy
   run:
-    - python
+    - python >=3.6
     - numpy
     - gdal
 
@@ -40,7 +41,7 @@ test:
     - riosprintstats.py -h
 
 about:
-  home: http://rioshome.org/
+  home: http://www.rioshome.org
   license: GPL-3.0-or-later
   license_file: LICENSE.txt
   summary: Raster I/O simplification, a set of Python modules built on top of GDAL to simplify processing raster data, including data with Raster Attribute Tables.
