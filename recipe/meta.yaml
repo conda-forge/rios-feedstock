@@ -26,6 +26,7 @@ build:
 requirements:
   host:
     - python >=3.6
+    - setuptools
     - numpy
   run:
     - python >=3.6
