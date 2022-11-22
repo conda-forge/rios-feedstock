@@ -1,8 +1,6 @@
-diff --git a/setup.py.orig b/setup.py
-index 1c757f3..5ff48b0 100644
---- a/setup.py.orig
-+++ b/setup.py
-@@ -31,7 +31,7 @@ import rios
+--- setup.py.orig	2022-11-22 13:11:03.752251443 +1000
++++ setup.py	2022-11-22 13:11:16.648100418 +1000
+@@ -28,7 +28,7 @@
  # Are we installing the command line scripts?
  # this is an experimental option for users who are
  # using the Python entry point feature of setuptools and Conda instead
