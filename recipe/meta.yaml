@@ -15,9 +15,8 @@ source:
 
 build:
   noarch: python
-  number: 0
-  script:
-    - {{ PYTHON }} setup.py install
+  number: 1
+  script: "{{ PYTHON }} -m pip install . -vv"
   entry_points:
     - testrios.py = rios.riostests.riostestutils:testAll
     - riosprintstats.py = rios.cmdline.riosprintstats:main
@@ -26,7 +25,7 @@ build:
 requirements:
   host:
     - python >=3.6
-    - setuptools
+    - pip
     - numpy
   run:
     - python >=3.6
