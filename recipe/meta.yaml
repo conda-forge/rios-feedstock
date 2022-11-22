@@ -15,9 +15,9 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script:
-    - {{ PYTHON }} setup.py install
+    - pip install .
   entry_points:
     - testrios.py = rios.riostests.riostestutils:testAll
     - riosprintstats.py = rios.cmdline.riosprintstats:main
