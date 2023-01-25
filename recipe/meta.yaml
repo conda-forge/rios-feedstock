@@ -1,4 +1,4 @@
-{% set version = "1.4.14" %}
+{% set version = "1.4.15" %}
 
 package:
   name: rios
@@ -7,7 +7,7 @@ package:
 source:
   fn: rios-{{ version }}.tar.gz
   url: https://github.com/ubarsc/rios/releases/download/rios-{{ version }}/rios-{{ version }}.tar.gz
-  sha256: ea22fde3fe70004aa1ad46bd36fad58f3346e9c161ca44ac913518a6e4fcad82
+  sha256: 71670508dbffcd8f5d24fbb25e6a2b7e1d23b5e899ddc78c90d403bd65981cf4
   patches:
     # Don't install the command line progs, use entry point instead
     # Setting the env vars doesn't work for noarch packages.
