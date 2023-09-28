@@ -33,7 +33,7 @@ requirements:
     - python >=3.6
     - numpy
     - gdal
-	- cloudpickle
+    - cloudpickle
 
 test:
   imports:
