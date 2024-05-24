@@ -1,0 +1,119 @@
+From 10616726564aed3c712da5010856a7288adb9565 Mon Sep 17 00:00:00 2001
+From: Neil Flood <neilflood@fastmail.fm>
+Date: Fri, 24 May 2024 10:10:31 +1000
+Subject: [PATCH] Guard any multi-cpu tests with a check against cpu_count()
+
+---
+ rios/riostests/testapplyreturn.py | 6 ++++--
+ rios/riostests/testavgsubproc.py  | 7 ++++++-
+ rios/riostests/testavgthreads.py  | 7 ++++++-
+ rios/riostests/testreaderinfo.py  | 7 +++++--
+ 4 files changed, 21 insertions(+), 6 deletions(-)
+
+diff --git a/rios/riostests/testapplyreturn.py b/rios/riostests/testapplyreturn.py
+index a8754672..602f729d 100644
+--- a/rios/riostests/testapplyreturn.py
++++ b/rios/riostests/testapplyreturn.py
+@@ -20,8 +20,9 @@
+ #
+ # You should have received a copy of the GNU General Public License
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-from rios import applier, structures
++from multiprocessing import cpu_count
+ 
++from rios import applier, structures
+ from . import riostestutils
+ 
+ TESTNAME = "TESTAPPLYRETURN"
+@@ -64,7 +65,8 @@ def calcAverage(file1, cwKind):
+     controls = applier.ApplierControls()
+     controls.setWindowXsize(100)
+     controls.setWindowYsize(100)
+-    conc = structures.ConcurrencyStyle(numComputeWorkers=4,
++    numComputeWorkers = min(4, cpu_count())
++    conc = structures.ConcurrencyStyle(numComputeWorkers=numComputeWorkers,
+         computeWorkerKind=cwKind, numReadWorkers=1)
+     controls.setConcurrencyStyle(conc)
+     
+diff --git a/rios/riostests/testavgsubproc.py b/rios/riostests/testavgsubproc.py
+index f328620c..10b42251 100644
+--- a/rios/riostests/testavgsubproc.py
++++ b/rios/riostests/testavgsubproc.py
+@@ -26,8 +26,11 @@
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ from __future__ import print_function
+ import os
++from multiprocessing import cpu_count
++
+ import numpy
+ from osgeo import gdal
++
+ from rios import applier, structures
+ from . import riostestutils
+ 
+@@ -77,8 +80,10 @@ def calcAverage(file1, file2, avgfile):
+     outfiles.avg = avgfile
+ 
+     controls = applier.ApplierControls()
++    numComputeWorkers = min(2, cpu_count())
+     conc = structures.ConcurrencyStyle(numReadWorkers=1,
+-        numComputeWorkers=2, computeWorkerKind=structures.CW_SUBPROC)
++        numComputeWorkers=numComputeWorkers,
++        computeWorkerKind=structures.CW_SUBPROC)
+     controls.setConcurrencyStyle(conc)
+ 
+     applier.apply(doAvg, infiles, outfiles, controls=controls)
+diff --git a/rios/riostests/testavgthreads.py b/rios/riostests/testavgthreads.py
+index eca2431d..1015769f 100644
+--- a/rios/riostests/testavgthreads.py
++++ b/rios/riostests/testavgthreads.py
+@@ -24,8 +24,11 @@
+ # along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ from __future__ import print_function
+ import os
++from multiprocessing import cpu_count
++
+ import numpy
+ from osgeo import gdal
++
+ from rios import applier, structures
+ from . import riostestutils
+ 
+@@ -72,8 +75,10 @@ def calcAverage(file1, file2, avgfile):
+     outfiles.avg = avgfile
+ 
+     controls = applier.ApplierControls()
++    numComputeWorkers = min(2, cpu_count())
+     conc = structures.ConcurrencyStyle(numReadWorkers=1,
+-        numComputeWorkers=2, computeWorkerKind=structures.CW_THREADS)
++        numComputeWorkers=numComputeWorkers,
++        computeWorkerKind=structures.CW_THREADS)
+     controls.setConcurrencyStyle(conc)
+ 
+     applier.apply(doAvg, infiles, outfiles, controls=controls)
+diff --git a/rios/riostests/testreaderinfo.py b/rios/riostests/testreaderinfo.py
+index bdb60a9e..0be61cba 100644
+--- a/rios/riostests/testreaderinfo.py
++++ b/rios/riostests/testreaderinfo.py
+@@ -20,6 +20,7 @@
+ from __future__ import division
+ 
+ import math
++from multiprocessing import cpu_count
+ 
+ from rios import applier, structures
+ 
+@@ -94,9 +95,11 @@ def run():
+         nullval = otherargs.nulls[key]
+         riostestutils.genRampImageFile(fn, nullVal=nullval)
+ 
+-    if structures.cloudpickle is not None:
++    numComputeWorkers = min(2, cpu_count())
++    if structures.cloudpickle is not None and numComputeWorkers > 1:
+         # We want this to work across threads and processes
+-        conc = applier.ConcurrencyStyle(numReadWorkers=2, numComputeWorkers=2,
++        conc = applier.ConcurrencyStyle(numReadWorkers=2,
++            numComputeWorkers=numComputeWorkers,
+             computeWorkerKind=applier.CW_SUBPROC)
+         controls.setConcurrencyStyle(conc)
+ 

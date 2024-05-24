@@ -1,4 +1,4 @@
-{% set version = "1.4.17" %}
+{% set version = "2.0.0" %}
 
 package:
   name: rios
@@ -7,11 +7,13 @@ package:
 source:
   fn: rios-{{ version }}.tar.gz
   url: https://github.com/ubarsc/rios/releases/download/rios-{{ version }}/rios-{{ version }}.tar.gz
-  sha256: 81007af2d0bcf2a3bf064dc2445087f8b2264c941fa66441b2b1b503168e677d
+  sha256: 21ce20c12a96ed69f90166434e64fb01624209a680cd12165bf14da51daed83a
   patches:
     # Don't install the command line progs, use entry point instead
     # Setting the env vars doesn't work for noarch packages.
     - nocmdline.patch
+    # See https://github.com/ubarsc/rios/pull/79
+    - rios_cpu_count.patch
 
 build:
   noarch: python
