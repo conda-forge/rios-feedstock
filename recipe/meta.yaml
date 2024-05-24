@@ -12,6 +12,8 @@ source:
     # Don't install the command line progs, use entry point instead
     # Setting the env vars doesn't work for noarch packages.
     - nocmdline.patch
+    # See https://github.com/ubarsc/rios/pull/79
+    - rios_cpu_count.patch
 
 build:
   noarch: python
