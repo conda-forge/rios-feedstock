@@ -34,9 +34,7 @@ test:
     - rios
   commands:
     - testrios
-    - rioscalcstats.py -h
     - rioscalcstats -h
-    - riosprintstats.py -h
     - riosprintstats -h
 
 about:
