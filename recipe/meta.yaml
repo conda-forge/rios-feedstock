@@ -17,6 +17,7 @@ build:
     - testrios = rios.riostests.riostestutils:testAll
     - riosprintstats = rios.cmdline.riosprintstats:main
     - rioscalcstats = rios.cmdline.rioscalcstats:main
+    - rios_computeworker = rios.cmdline.rios_computeworker:mainCmd
 
 requirements:
   host:
@@ -36,6 +37,7 @@ test:
     - testrios
     - rioscalcstats -h
     - riosprintstats -h
+    - rios_computeworker -h
 
 about:
   home: http://www.rioshome.org
