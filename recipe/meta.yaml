@@ -8,10 +8,6 @@ source:
   fn: rios-{{ version }}.tar.gz
   url: https://github.com/ubarsc/rios/releases/download/rios-{{ version }}/rios-{{ version }}.tar.gz
   sha256: 8b8bcbf11a45af46d25b95d9d4a402ec0466ed117b3464f4226a6a466d9687b5
-  patches:
-    # Don't install the command line progs, use entry point instead
-    # Setting the env vars doesn't work for noarch packages.
-    - nocmdline.patch
 
 build:
   noarch: python
