@@ -15,9 +15,7 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - testrios = rios.riostests.riostestutils:testAll
-    - riosprintstats.py = rios.cmdline.riosprintstats:main
     - riosprintstats = rios.cmdline.riosprintstats:main
-    - rioscalcstats.py = rios.cmdline.rioscalcstats:main
     - rioscalcstats = rios.cmdline.rioscalcstats:main
 
 requirements:
