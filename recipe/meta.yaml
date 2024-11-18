@@ -21,16 +21,19 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
+    - setuptools
     - numpy
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy
     - gdal
     - cloudpickle
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - rios
   commands:
