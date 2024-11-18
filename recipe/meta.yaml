@@ -1,4 +1,4 @@
-{% set version = "2.0.4" %}
+{% set version = "2.0.5" %}
 
 package:
   name: rios
@@ -7,7 +7,7 @@ package:
 source:
   fn: rios-{{ version }}.tar.gz
   url: https://github.com/ubarsc/rios/releases/download/rios-{{ version }}/rios-{{ version }}.tar.gz
-  sha256: c62e170b7a898d8341d3873d5e8fdb10aa6ca3be910bcfb74bc209f14e88ddee
+  sha256: 4bd19c5e08dd03a0552fa4a7081597cd4915e47b938aef7f9a6be2c0da9aeb41
 
 build:
   noarch: python
@@ -21,16 +21,19 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
+    - setuptools
     - numpy
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy
     - gdal
     - cloudpickle
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - rios
   commands:
