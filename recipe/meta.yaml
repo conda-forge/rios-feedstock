@@ -1,4 +1,4 @@
-{% set version = "2.0.6" %}
+{% set version = "2.0.7" %}
 
 package:
   name: rios
@@ -7,7 +7,7 @@ package:
 source:
   fn: rios-{{ version }}.tar.gz
   url: https://github.com/ubarsc/rios/releases/download/rios-{{ version }}/rios-{{ version }}.tar.gz
-  sha256: 30d005fc9ac2d93189f8301fba385bd1c5f9c87dc572d8aa05b6ba6a7c59fa28
+  sha256: 01c587ecb3653651125136c89de92f4f2b2eda6e8df96927f1788042069d1179
 
 build:
   noarch: python
